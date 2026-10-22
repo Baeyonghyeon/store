@@ -1,0 +1,19 @@
+# 근거 문서 경로는 EVIDENCE_ROOT(기본 evidence/)를 기준으로 작성합니다.
+# 서비스·메서드·라우트를 정확하게 비교하며 route에는 route_template을 권장합니다.
+# 파일 변경은 API를 재시작한 뒤 접수하는 작업부터 적용됩니다.
+version = 1
+
+[[routes]]
+service = "order-service"
+method = "POST"
+route = "/orders"
+specification = "order-service/orders/specification.md"
+bdd = "order-service/orders/existing.feature"
+
+# 채팅방 목록 API의 근거 문서와 테스트 코드 매핑입니다.
+[[routes]]
+service = "noteu"
+method = "GET"
+route = "/subjects/{subject-id}/chats/rooms"
+specification = "noteu/chat-rooms/specification.md"
+bdd = "noteu/chat-rooms/existing.feature"
