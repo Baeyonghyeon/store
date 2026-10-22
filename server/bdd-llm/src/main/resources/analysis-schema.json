@@ -1,0 +1,139 @@
+{
+  "$defs": {
+    "ExpectedOutcome": {
+      "additionalProperties": false,
+      "description": "Then의 기대 동작마다 제품 명세의 원문 근거를 붙입니다.",
+      "properties": {
+        "behavior": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Behavior",
+          "type": "string"
+        },
+        "specification_quote": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Specification Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "behavior",
+        "specification_quote"
+      ],
+      "title": "ExpectedOutcome",
+      "type": "object"
+    },
+    "ScenarioCandidate": {
+      "additionalProperties": false,
+      "description": "사람이 검토할 BDD 후보이며 실행된 테스트를 뜻하지 않습니다.",
+      "properties": {
+        "title": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Title",
+          "type": "string"
+        },
+        "gap_type": {
+          "enum": [
+            "missing_scenario",
+            "weak_assertion"
+          ],
+          "title": "Gap Type",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Reason",
+          "type": "string"
+        },
+        "existing_bdd_quotes": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Existing Bdd Quotes",
+          "type": "array"
+        },
+        "given": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Given",
+          "type": "array"
+        },
+        "when": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "When",
+          "type": "string"
+        },
+        "then": {
+          "items": {
+            "$ref": "#/$defs/ExpectedOutcome"
+          },
+          "minItems": 1,
+          "title": "Then",
+          "type": "array"
+        }
+      },
+      "required": [
+        "title",
+        "gap_type",
+        "reason",
+        "existing_bdd_quotes",
+        "given",
+        "when",
+        "then"
+      ],
+      "title": "ScenarioCandidate",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "LLM에 요청하고 응답에서 검사할 구조입니다. 후보 0개도 허용합니다.",
+  "properties": {
+    "summary": {
+      "minLength": 1,
+      "pattern": "\\S",
+      "title": "Summary",
+      "type": "string"
+    },
+    "existing_bdd_assessment": {
+      "minLength": 1,
+      "pattern": "\\S",
+      "title": "Existing Bdd Assessment",
+      "type": "string"
+    },
+    "candidates": {
+      "items": {
+        "$ref": "#/$defs/ScenarioCandidate"
+      },
+      "maxItems": 5,
+      "title": "Candidates",
+      "type": "array"
+    },
+    "questions": {
+      "items": {
+        "minLength": 1,
+        "pattern": "\\S",
+        "type": "string"
+      },
+      "title": "Questions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "summary",
+    "existing_bdd_assessment",
+    "candidates",
+    "questions"
+  ],
+  "title": "AnalysisResult",
+  "type": "object"
+}
