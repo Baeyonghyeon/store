@@ -1,0 +1,23 @@
+{
+  "service": "order-service",
+  "environment": "local",
+  "occurred_at": "2026-10-16T10:00:00+09:00",
+  "deploy_sha": "0123456789abcdef0123456789abcdef01234567",
+  "request": {
+    "method": "POST",
+    "path": "/orders",
+    "body": {
+      "coupon_code": "EXPIRED-DEMO"
+    }
+  },
+  "response": {
+    "status_code": "500"
+  },
+  "error": {
+    "type": "CouponExpiredError",
+    "message": "만료된 쿠폰을 적용하는 중 오류가 발생했습니다.",
+    "stack_trace": [
+      123
+    ]
+  }
+}
