@@ -1,0 +1,110 @@
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+.env
+.env.*
+.envrc
+artifacts/
+*.dump
+
+# Operating system and editor files
+.DS_Store
+.AppleDouble
+._*
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Local logs, diagnostics, and backups
+logs/
+*.log
+*.hprof
+*.jfr
+hs_err_pid*
+replay_pid*
+*.bak
+*.sql.gz
+*.sql.zip
+*.dump.gz
+
+# Local credentials and configuration
+secrets/
+.aws/
+.ssh/
+credentials.json
+credentials-*.json
+id_rsa
+id_ecdsa
+id_ed25519
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local schema files
+/src/main/resources/db/migration/
+/src/main/resources/legacy-schema.json
+
+# Local setup notes, verification reports, and experiments
+/docs/ai-configuration.md
+/docs/test-source-verification.md
+/docs/token-measurement/
+/tools/token-measurement/
+/scripts/copy-stopped-db.sh
+
+# Unused directory markers
+/prompts/
+/samples/.gitkeep
