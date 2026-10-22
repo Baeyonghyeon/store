@@ -1,0 +1,15 @@
+{
+  "case_id": "coupon_covered",
+  "category": "already_covered",
+  "description": "명세에 있는 만료 정책의 기대 동작을 기존 BDD가 이미 모두 검증한다.",
+  "assertions": [],
+  "question_patterns": [],
+  "review_notes": [
+    "reference.json은 사람이 작성한 평가기 점검용 예시이며 실제 LLM 응답이나 품질 측정 결과가 아닙니다.",
+    "expected.json과 reference.json은 채점 전용입니다. LLM 입력에는 event.json, specification.md, existing.feature만 전달합니다.",
+    "정규식은 제한된 한국어 표현과 명백한 반대 표현을 점검합니다. 동의어, 부정의 범위, 의미적 타당성은 사람이 검토해야 합니다.",
+    "정책 한 항목의 patterns는 같은 Then 기대 동작에서 모두 충족해야 합니다. 분리된 Then으로 표현된 동등한 답변은 수동 검토 대상입니다.",
+    "BDD 문서의 시나리오 공백을 평가합니다. 실제 테스트 구현·실행·커버리지와 오류의 근본 원인은 검증하지 않습니다.",
+    "운영 오류가 있다는 이유만으로 동일한 BDD를 중복 제안하면 실패입니다. 실제 구현·실행 문제 여부는 별도 조사 대상입니다."
+  ]
+}
