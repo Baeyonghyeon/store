@@ -1,0 +1,27 @@
+{
+  "display_information": {
+    "name": "BDD Gap Reviewer",
+    "description": "BDD 시나리오 후보를 Slack에서 승인·수정·반려합니다.",
+    "background_color": "#376654"
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "BDD Gap Reviewer",
+      "always_online": false
+    }
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "chat:write"
+      ]
+    }
+  },
+  "settings": {
+    "socket_mode_enabled": false,
+    "interactivity": {
+      "is_enabled": true,
+      "request_url": "https://YOUR-TUNNEL-DOMAIN/slack/events"
+    }
+  }
+}
