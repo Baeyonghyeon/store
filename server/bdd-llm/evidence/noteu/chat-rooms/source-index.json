@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "audited_commit": "9bbbfdb77c9b7675015fd21e6061c704aa9748e2",
+  "route": "GET /subjects/{subject-id}/chats/rooms",
+  "note": "출처 변경 감지용이며 자동 코드 해석 또는 LLM 입력 자체가 아닙니다. 정책 결정은 명세의 확인 상태를 따릅니다.",
+  "sources": [
+    {
+      "path": "src/main/java/com/noteu/noteu/chat/controller/ChatRoomController.java",
+      "scope": "46-51: 대상 GET 라우트 및 사용자 ID 사용",
+      "sha256": "a007f2023d36cfec4db42206ff68356c29a3f06720cfb30711e25cd089fb548d"
+    },
+    {
+      "path": "src/main/java/com/noteu/noteu/chat/service/impl/RestChatServiceImpl.java",
+      "scope": "55-90: 목록 구성, 정렬, 빈 메시지 fallback",
+      "sha256": "5e012da9c089850b3ea93d6d21da307efc0d26116d2aa7966b782983f6010a08"
+    },
+    {
+      "path": "src/main/java/com/noteu/noteu/chat/repository/querydsl/impl/ChatRoomRepositoryCustomImpl.java",
+      "scope": "23-44: 과목/본인 참여 필터와 방 중복 제거",
+      "sha256": "2c21cf5899f9a923b35145666bff2625cc706c78f83ce4d5d6af0bc6f6decd65"
+    },
+    {
+      "path": "src/main/java/com/noteu/noteu/chat/repository/querydsl/impl/ChatMessageRepositoryCustomImpl.java",
+      "scope": "방별 최대 메시지 ID 조회",
+      "sha256": "f62a4fdf468480f051b1d7956e054f71c347d8e000b49e7502e2a8c9efc827ae"
+    },
+    {
+      "path": "src/main/java/com/noteu/noteu/chat/converter/ChatConverter.java",
+      "scope": "18-28: 참가자 변환",
+      "sha256": "21c8f69e3a0ed79b280a9c39695078264c74c3db20abdc06080bba706e30b5de"
+    },
+    {
+      "path": "src/main/java/com/noteu/noteu/chat/dto/response/ChatRoomInfoResponseDto.java",
+      "scope": "응답 외부 필드",
+      "sha256": "9ade399d39b24ba80c52805a3e2e8b059f5cf79e4f9074efed839e8b55834996"
+    },
+    {
+      "path": "src/main/java/com/noteu/noteu/chat/dto/response/ChatRoomResponseDto.java",
+      "scope": "방 응답 필드",
+      "sha256": "b51a6b35c93f49155bbbfbfc5aaf8802af07ad1c2457141f996ece2ecc9d501c"
+    },
+    {
+      "path": "src/main/java/com/noteu/noteu/config/SecurityConfig.java",
+      "scope": "41-62: permitAll 및 로그인 페이지 설정",
+      "sha256": "d5521e6c2c464da4e6266584c98cd107562a650d69f4cc65c9c9491577097293"
+    },
+    {
+      "path": "src/main/resources/static/js/chat/chat.js",
+      "scope": "164-175,301-316: 실제 프런트 호출",
+      "sha256": "d298a216c03a59d276a8196d5490cb5d6f687540a0cb90b7d28db44ba0ced53e"
+    },
+    {
+      "path": "docs/N+1_검증_가이드.md",
+      "scope": "201-239: 요구사항/수동 이력/상충하는 문구",
+      "sha256": "0d497f038c0b39ee2a7794323144cf7273bc4fd31a7a71a79d8092281dcc93a3"
+    },
+    {
+      "path": "docs/N+1_개선_설계.md",
+      "scope": "391-399: 유지할 동작 체크리스트",
+      "sha256": "12e654af0998b3a7f918ec83a84a195c6903156b2bfdf1b3eb636a3bba703833"
+    },
+    {
+      "path": "load-gen/rooms.mjs",
+      "scope": "24-35,44-53: HTTP 성공 여부와 시간 측정",
+      "sha256": "dbcdaf01790f9f7f1bf5adb46e163e4f0a213e4e7c891fa6f5060855996aa8eb"
+    },
+    {
+      "path": "load-gen/polling.mjs",
+      "scope": "15-27: 반복 요청 측정",
+      "sha256": "3ac89bf12c3f55605fe6890c65c56d2923275933875052abb48aa8b1161d0fef"
+    },
+    {
+      "path": "scripts/measure-n1.sh",
+      "scope": "24-29: 쿼리 수 측정",
+      "sha256": "9c4355ce9fedbd3038a0955b73593299cfae28688b2d973a871bd17e97d9d6bc"
+    },
+    {
+      "path": "src/test/java/com/noteu/noteu/NoteuApplicationTests.java",
+      "scope": "앱 컨텍스트 테스트",
+      "sha256": "0e3968b28d409327f87a64a2049a9eb1085ac5182fc2424a287c564fa63d8299"
+    },
+    {
+      "path": "src/test/java/com/noteu/noteu/error/reporting/ErrorReportingInterceptorTest.java",
+      "scope": "가상 MVC 컨트롤러 11개 테스트",
+      "sha256": "cf1feea3046b2a8ed1432e825acb8d61f1e520abced14142d31b9dafb21e8d78"
+    },
+    {
+      "path": "src/test/java/com/noteu/noteu/error/reporting/ErrorEventReporterTest.java",
+      "scope": "가상 HTTP 수신 서버 6개 테스트",
+      "sha256": "7a85a4a95ad0310a9c9a70cf42121993e2fc0785a30e0bcc050a4e68c54c57c6"
+    },
+    {
+      "path": "src/test/java/com/noteu/noteu/error/reporting/ErrorReportingConfigTest.java",
+      "scope": "설정 5개 테스트",
+      "sha256": "e596ba34d81b624a47ee7d1f47954f430ed80d3ce2eba81d1f9839e39f6ccf62"
+    }
+  ]
+}
